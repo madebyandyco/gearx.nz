@@ -1,16 +1,25 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import Brands from '../components/Brands.astro';
+import WhyChooseUs from '../components/WhyChooseUs.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+  title="Gear-X Automotive | Premium Parts & Services"
+  description="Your trusted partner for premium automotive parts and professional repair services. Quality parts, expert mechanics, and exceptional customer service."
+>
+  <Hero
+    title="Premium Automotive Parts & Expert Services"
+    description="Your trusted partner for quality parts and professional repair services. We deliver excellence in every detail."
+  />
+
+  <Services />
+  <Brands />
+  <!-- <WhyChooseUs /> -->
+  <Contact />
+  <Footer />
+</Layout>

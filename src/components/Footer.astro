@@ -1,0 +1,48 @@
+---
+interface ContactInfo {
+  address: string[];
+  phone: string;
+  email: string;
+}
+
+interface BusinessHours {
+  days: string[];
+}
+
+const contactInfo: ContactInfo = {
+  address: ['123 Auto Street', 'City, State 12345'],
+  phone: '(555) 123-4567',
+  email: 'info@gear-x.com',
+};
+
+const businessHours: BusinessHours = {
+  days: ['Mon-Fri: 8am - 6pm', 'Sat: 9am - 4pm', 'Sun: Closed'],
+};
+---
+
+<footer class="bg-gray-900 text-white py-12">
+  <div class="container">
+    <div class="grid md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="text-xl font-semibold mb-4">Gear-X Automotive</h3>
+        <p class="text-gray-400">Your trusted partner for automotive excellence.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+        {contactInfo.address.map((line) => <p class="text-gray-400">{line}</p>)}
+        <p class="text-gray-400">Phone: {contactInfo.phone}</p>
+        <p class="text-gray-400">Email: {contactInfo.email}</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold mb-4">Hours</h3>
+        {businessHours.days.map((day) => <p class="text-gray-400">{day}</p>)}
+      </div>
+    </div>
+    <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
+      <p>&copy; {new Date().getFullYear()} Gear-X Automotive. All rights reserved.</p>
+    </div>
+    <div class="text-center text-gray-400 opacity-50">
+      <p>Web design and development <a href="https://madebyandy.co/">Made by Andy</a></p>
+    </div>
+  </div>
+</footer>

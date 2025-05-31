@@ -1,0 +1,39 @@
+---
+interface Brands {
+  title: string;
+  description: string;
+}
+
+const brands: Brands[] = [
+  {
+    title: 'Gear-X',
+    description: 'Premium quality parts for all makes and models. OEM and aftermarket options available with warranty.',
+  },
+  {
+    title: 'Standard Suspension',
+    description: 'Expert diagnostics and repairs by certified mechanics using state-of-the-art equipment.',
+  },
+  {
+    title: 'Toda',
+    description: 'Regular maintenance brands to keep your vehicle running smoothly and efficiently.',
+  },
+];
+---
+
+<section id="brands" class="py-20 bg-white">
+  <div class="container">
+    <h2 class="text-3xl font-bold text-center mb-4">Our Brands</h2>
+    <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">The brands we stock are the best in the business.</p>
+    <div class="grid md:grid-cols-3 gap-8">
+      {
+        brands.map((service) => (
+          <div class="p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4" />
+            <h3 class="text-xl font-semibold mb-4">{service.title}</h3>
+            <p class="text-gray-600">{service.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
