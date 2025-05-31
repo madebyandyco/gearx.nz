@@ -1,6 +1,6 @@
-## 🚀 Project Structure
+# gearx.nz website
 
-Repo for the gearx.nz website
+## Project Structure
 
 ```text
 /
@@ -17,7 +17,7 @@ There's nothing special about `src/components/`, but that's where we like to put
 
 Any static assets, like images, can be placed in the `public/` directory.
 
-## 🧞 Commands
+## Build commands
 
 All commands are run from the root of the project, from a terminal:
 
