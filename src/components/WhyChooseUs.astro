@@ -1,0 +1,60 @@
+---
+interface Feature {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+const features: Feature[] = [
+  {
+    title: 'Quality Parts',
+    description: 'Only the best parts from trusted manufacturers',
+    icon: `<svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+    </svg>`,
+  },
+  {
+    title: 'Expert Team',
+    description: 'Certified mechanics with years of experience',
+    icon: `<svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+    </svg>`,
+  },
+  {
+    title: 'Fast Service',
+    description: 'Quick turnaround without compromising quality',
+    icon: `<svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+    </svg>`,
+  },
+  {
+    title: 'Fair Pricing',
+    description: 'Competitive rates with transparent quotes',
+    icon: `<svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+    </svg>`,
+  },
+];
+---
+
+<section class="bg-gray-50 py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-center mb-4">Why Choose Us</h2>
+    <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+      We're committed to providing the best automotive services with unmatched quality and customer satisfaction.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {
+        features.map((feature) => (
+          <div class="text-center p-6">
+            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Fragment set:html={feature.icon} />
+            </div>
+            <h3 class="text-xl font-semibold mb-2">{feature.title}</h3>
+            <p class="text-gray-600">{feature.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
