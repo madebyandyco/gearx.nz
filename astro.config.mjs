@@ -9,7 +9,7 @@ export default defineConfig({
   output: 'static',
   outDir: './dist',
   build: {
-    assetsPrefix: 'http://madebyandyco.github.io/gearx.nz/',
+    assetsPrefix: '//madebyandyco.github.io/gearx.nz/',
     assets: 'assets',
   },
   integrations: [tailwind()],
