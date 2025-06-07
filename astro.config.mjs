@@ -18,5 +18,8 @@ export default defineConfig({
         allow: ['..'],
       },
     },
+    build: {
+      cssMinify: true,
+    },
   },
 });
