@@ -9,7 +9,7 @@ export default defineConfig({
   output: 'static',
   outDir: './dist',
   build: {
-    assets: 'assets',
+    assets: 'static',
   },
   integrations: [tailwind()],
   vite: {
