@@ -5,11 +5,11 @@ import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://gearx.nz',
-  // base: 'gear-x',
+  base: '/',
   output: 'static',
   outDir: './dist',
   build: {
-    assets: 'astro',
+    assets: 'assets',
   },
   integrations: [tailwind()],
   vite: {
