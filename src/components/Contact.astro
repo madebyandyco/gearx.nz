@@ -48,6 +48,9 @@ const recaptchaSiteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
 const staticFormsApiKey = import.meta.env.PUBLIC_STATICFORMS_API_KEY;
 ---
 
+<!-- reCAPTCHA JS -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 <section id="contact" class="py-20 bg-white">
   <div class="container">
     <h2 class="text-3xl font-bold text-center mb-4">Contact Us</h2>
@@ -98,15 +101,13 @@ const staticFormsApiKey = import.meta.env.PUBLIC_STATICFORMS_API_KEY;
         </div>
 
         <div class="grid gap-6 sm:grid-cols-2">
-          <div class="g-recaptcha" data-sitekey={recaptchaSiteKey} aria-label="reCAPTCHA verification"></div>
+          <div class="g-recaptcha" data-sitekey={recaptchaSiteKey} data-callback="onRecaptchaLoad" aria-label="reCAPTCHA verification">
+          </div>
         </div>
 
         <div>
           <button type="submit" class="btn btn-primary w-full" aria-label="Submit contact form">Send Enquiry</button>
         </div>
-
-        <!-- reCAPTCHA JS -->
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
       </form>
     </div>
   </div>
@@ -118,6 +119,11 @@ const staticFormsApiKey = import.meta.env.PUBLIC_STATICFORMS_API_KEY;
   const submitButton = form?.querySelector('button[type="submit"]') as HTMLButtonElement | null;
   const successMessage = document.getElementById('success-message');
   const errorMessage = document.getElementById('error-message');
+
+  // Function to handle reCAPTCHA load
+  (window as any).onRecaptchaLoad = function () {
+    console.log('reCAPTCHA loaded successfully');
+  };
 
   const showMessage = (type: 'success' | 'error') => {
     if (type === 'success') {
