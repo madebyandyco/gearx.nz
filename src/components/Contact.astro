@@ -46,6 +46,9 @@ const formFields: FormField[] = [
 // Get environment variables
 const recaptchaSiteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
 const staticFormsApiKey = import.meta.env.PUBLIC_STATICFORMS_API_KEY;
+
+// Debug log
+console.log('reCAPTCHA Site Key:', recaptchaSiteKey);
 ---
 
 <!-- reCAPTCHA JS -->
@@ -101,7 +104,7 @@ const staticFormsApiKey = import.meta.env.PUBLIC_STATICFORMS_API_KEY;
         </div>
 
         <div class="grid gap-6 sm:grid-cols-2">
-          <div class="g-recaptcha" data-sitekey={recaptchaSiteKey}></div>
+          <div class="g-recaptcha" data-sitekey="6LfSIFkrAAAAAKcZC4KTofjfkPVAgsBnRcDbzIRx"></div>
         </div>
 
         <div>
