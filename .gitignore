@@ -18,5 +18,7 @@ pnpm-debug.log*
 .env
 .env.production
 
+_gearxnz.txt
+
 # macOS-specific files
 .DS_Store
