@@ -32,6 +32,9 @@ export default {
         'auto-fit': 'repeat(auto-fit, minmax(250px, 1fr))',
         'auto-fill': 'repeat(auto-fill, minmax(250px, 1fr))',
       },
+      fontFamily: {
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Arial', 'sans-serif'],
+      },
     },
   },
   plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography'), require('@tailwindcss/aspect-ratio')],

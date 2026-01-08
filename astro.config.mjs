@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
+// import tailwind from '@astrojs/tailwind';
+
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,15 +14,29 @@ export default defineConfig({
     assetsPrefix: '//madebyandyco.github.io/gearx.nz/',
     assets: 'assets',
   },
-  integrations: [tailwind()],
+  integrations: [],
   vite: {
     server: {
       fs: {
         allow: ['..'],
       },
     },
+
     build: {
       cssMinify: true,
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            vendor: ['astro'],
+          },
+        },
+      },
     },
+
+    css: {
+      devSourcemap: true,
+    },
+
+    plugins: [tailwindcss()],
   },
 });
